@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="IndexController">
+		<div class="page-header">
+			<h1>Clients</h1>
+		</div>
+		<div>
+			<div class="page-header col-xs-6">Client name</div>
+			<div class="page-header col-xs-3">Premium</div>
+			<div class="page-header col-xs-3">More info</div>
+		</div>
+		<div class="form-group" ng-repeat="client in clients">
+			<div class="col-xs-6">
+				<label> {{client.name}} </label>
+			</div>
+			<div class="col-xs-3">
+				<div ng-if="client.premium == true">
+					<button class="pull-left btn btn-success" type="button">
+						<span class="glyphicon glyphicon-ok"></span>
+					</button>
+				</div>
+				<div ng-if="client.premium == false">
+					<button class="pull-left btn btn-danger" type="button">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</div>
+			</div>
+			<div class="col-xs-3">
+				<button
+					ng-if="client.parkingInfo == null || client.showInfo == false"
+					class="pull-left btn btn-default"
+					ng-click="parkingInfo(client);  client.showInfo = true;"
+					type="button">View</button>
+
+				<button ng-if="client.showInfo == true"
+					class="pull-left btn btn-default"
+					ng-click="client.showInfo = false;" type="button">Hide</button>
+			</div>
+			<div ng-if="client.showInfo == true" class="col-xs-1"></div>
+			<div ng-if="client.showInfo == true" class="col-xs-11">
+				<div ng-if="client.parkingInfo.length>0"
+					ng-repeat="info in client.parkingInfo">
+					<a
+						href="/parking-info/{{client.identifier}}/{{info.year}}/{{info.monthValue}}/">
+						{{info.year}} / {{info.month}}</a>
+				</div>
+				<div ng-if="client.parkingInfo.length == 0">
+					<b>No parking info found</b>
+				</div>
+			</div>
+		</div>
+		<hr />
+	</div>
+	<script type="text/javascript"
+		src="https://code.angularjs.org/1.3.9/angular.min.js"></script>
+	<script type="text/javascript"
+		src="https://code.angularjs.org/1.3.9/angular-resource.min.js"></script>
+	<script type="text/javascript"
+		src="https://code.angularjs.org/1.3.9/angular-route.min.js"></script>
+	<script type="text/javascript"
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.5.0/lodash.min.js"></script>
+	<script type="text/javascript" src="./app/app.js"></script>
+	<script type="text/javascript" src="./app/controllers.js"></script>
+	<script type="text/javascript" src="./app/services.js"></script>
+</body>
+</html>

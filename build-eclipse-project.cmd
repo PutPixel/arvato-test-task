@@ -1,0 +1,1 @@
+mvn -U eclipse:eclipse -DdownloadSources=true  -DdownloadJavadocs=true -Peclipse -T 2C

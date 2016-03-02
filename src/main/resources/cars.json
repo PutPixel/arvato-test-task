@@ -1,0 +1,29 @@
+[
+	{
+		"identifier": "test1_car1",
+		"alias": "Car 1 Test 1",
+		"plate": "test1_car1",
+		"clientIdentifier": "test1"
+	},
+
+	{
+		"identifier": "test1_car2",
+		"alias": "Car 2 Test 1",
+		"plate": "test1_car2",
+		"clientIdentifier": "test1"
+	},
+
+	{
+		"identifier": "test2_car1",
+		"alias": "Car 1 Test 2",
+		"plate": "test2_car1",
+		"clientIdentifier": "test2"
+	},
+
+	{
+		"identifier": "test3_car_1",
+		"alias": "Car 1 Test 3",
+		"plate": "test3_car1",
+		"clientIdentifier": "test3"
+	}
+]

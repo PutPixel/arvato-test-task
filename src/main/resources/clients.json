@@ -1,0 +1,19 @@
+[
+	{
+		"identifier": "test1",
+		"name": "Test 1",
+		"premium": "true"
+	},
+
+	{
+		"identifier": "test2",
+		"name": "Test 2",
+		"premium": "false"
+	},
+
+	{
+		"identifier": "test3",
+		"name": "Test 3",
+		"premium": "false"
+	}
+]
