@@ -1,8 +1,8 @@
-#Run application server 
-mvn spring-boot:run 
+##Run application server 
+>mvn spring-boot:run 
 
-#View
-http://localhost:8888/
+##View
+>http://localhost:8888/
 
-#Configure 
-Logging via src\main\resources\logback.xml file
+##Configure logging 
+>src\main\resources\logback.xml file
